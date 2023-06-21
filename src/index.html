@@ -8,6 +8,12 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<script src="script.js"></script>
+
+
+
 </head>
 <body>
     <main>
@@ -33,6 +39,7 @@
             <li><a href="#achievements">Scholarly Achievements</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
+          <li><a href="#blogs">Blogs</a></li>
         </ul>
     </nav>
 
@@ -206,7 +213,50 @@
             </section>
             
         </article>
+     <style>
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .container > div {
+    flex: 1;
+    margin-right: 20px;
+  }
+
+  .blog-carousel {
+    margin-top: 20px;
+  }
+
+  /* CSS styles for Twitter widget container */
+  .twitter-container {
+    max-width: 500px;
+  }
+    @media (max-width: 768px) {
+      .twitter-container {
+        display: none;
+      }
+    }
+</style>
+
+<div class="container">
+  <div class="center-column" id="blogs">
     
+    <section class="blog-carousel">
+      <h2><i class="fas fa-book"></i> My Blogs</h2>
+      <div class="owl-carousel owl-theme"></div>
+    </section>
+    <medium-blogpost username="jaintle"></medium-blogpost>
+  </div>
+  <div class="twitter-container">
+    <a class="twitter-timeline" data-height="4000" href="https://twitter.com/jaintle?ref_src=twsrc%5Etfw">Tweets by jaintle</a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+</div>
+
+
+
     </main>
+
 </body>
 </html>
