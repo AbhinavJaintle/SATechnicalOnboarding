@@ -73,8 +73,8 @@ template.innerHTML = `
     color: rgba(68, 68, 68, 0.8);
   }
 
-  /* Media Query for screens smaller than 768px */
-  @media (max-width: 767px) {
+  /* Media Query for screens smaller than 1200px */
+  @media (max-width: 1200px) {
     .medium-blogpost-carousel-item {
       width: 100%;
       margin: 0 10px;
@@ -113,18 +113,10 @@ class MediumBlogpost extends HTMLElement {
     this.render();
   }
 
-  renderUser(data) {
-    this._shadowRoot.querySelector(
-        '.medium-blogpost-author-img'
-      ).innerHTML = `<img src="${data.feed.image}" alt="${data.feed.title}" />`;
-      this._shadowRoot.querySelector(
-        '.medium-blogpost-author-info'
-      ).innerHTML = `
-        <h3>${data.items[0].author}</h3>
-        <p>@${this.username}</p>
-        <button class="medium-follow-button">Follow</button>
-      `;
-  }
+renderUser(data){
+        this._shadowRoot.querySelector('.medium-blogpost-author-img').innerHTML = `<img src="${data.feed.image}" alt="${this.name}"/>`
+        this._shadowRoot.querySelector('.medium-blogpost-author-info').innerHTML = `<h3>${data.items[0].author}</h3><p>@${this.username}</p><a href="https://medium.com/@${this.username}" target="_blank"><button class="medium-follow-button">Follow</button></a>`
+    }
 
   renderArticles(data = []) {
     const carouselContainer = this._shadowRoot.querySelector('.medium-blogpost-carousel');
@@ -133,9 +125,9 @@ class MediumBlogpost extends HTMLElement {
       const carouselItem = document.createElement('div');
       carouselItem.classList.add('medium-blogpost-carousel-item');
       carouselItem.innerHTML = `
-        <img src="${data.thumbnail}" alt="${data.title}">
+        <a href="${data.link}" target="_blank"> <img src="${data.thumbnail}" alt="${data.title}">
         <h3>${data.title}</h3>
-        <p>${this.parseDate(data.pubDate)}</p>
+        <p>${this.parseDate(data.pubDate)}</p></a>
       `;
       carouselContainer.appendChild(carouselItem);
     });
