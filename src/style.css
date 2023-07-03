@@ -80,17 +80,77 @@ a:hover {
   content: "\f099";
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 10px;
-}
+#skills {
+      font-size: 32px;
+/*       text-align: center; */
+      margin-bottom: 40px;
+      color: #333;
+    }
 
-td {
-  padding: 5px;
-  vertical-align: top;
-}
+    .skills-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
 
+    .skill-category {
+      background-color: #f7f7f7;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 250px;
+      transition: transform 0.3s ease;
+    }
+
+    .skill-category:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .skill-category h3 {
+      font-size: 20px;
+      color: #333;
+      text-align: center;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .skill-category ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .skill-category ul li {
+      margin-bottom: 8px;
+      color: #666;
+      font-size: 16px;
+      position: relative;
+      padding-left: 20px;
+      transition: color 0.3s ease;
+    }
+
+    .skill-category ul li:before {
+      content: "\f00c";
+      color: #666;
+      display: inline-block;
+      font-family: "FontAwesome";
+      font-size: 14px;
+      position: absolute;
+      left: 0;
+      top: 4px;
+      transition: color 0.3s ease;
+    }
+
+    .skill-category ul li:hover {
+      color: #333;
+    }
+
+    .skill-category ul li:hover:before {
+      color: #333;
+    }
 /* Apple-style specific styles */
 body {
   background-color: #f9f9f9;
@@ -123,6 +183,7 @@ a {
   list-style-type: none;
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid #ddd;
 }
 
 .navbar li {
@@ -266,6 +327,14 @@ a {
 
   .navbar-contact a {
     display: none;
+  }
+  .skills-container {
+    justify-content: center;
+  }
+
+  .skill-category {
+    width: 100%;
+    max-width: 350px;
   }
 }
 
