@@ -1,7 +1,15 @@
+
+window.addEventListener('scroll', function() {
+            var verticalName = document.querySelector(".vertical-name");
+            var scrollY = window.scrollY;
+            verticalName.style.top = -(scrollY)+350 + "px";
+        });
+
 const template = document.createElement('template');
 
 template.innerHTML = `
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@400;600&display=swap');
   /* CSS styles for the carousel container */
   .medium-blogpost-carousel {
     width: 100%;
@@ -13,7 +21,8 @@ template.innerHTML = `
     display: flex;
     flex-direction: column;
     border: 1px solid rgba(131, 131, 131, 0.2);
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-family: 'Martel Sans', sans-serif;
+    font-feature-settings: "liga";
     border-radius: 8px;
     padding: 10px;
     margin: 0 10px;
