@@ -1,8 +1,12 @@
 /* Reset default styles */
+  @import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@400;600&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Martel Sans', sans-serif;
+           font-feature-settings: "liga";
 }
 
 /* Global styles */
@@ -19,7 +23,42 @@ body {
   border-radius: 5px;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: 'Matrel Sans', sans-serif;
+  font-feature-settings: "liga";
+  font-weight: bold;
 }
+body {
+            margin: 0;
+          background-color: white;
+        }
+
+        .vertical-line {
+            position: fixed;
+            top: 0;
+            left: 50px;
+            width: 0.5px;
+            height: 100vh;
+            background-color: #DEDEDE;
+            z-index: 1;
+        }
+
+        .vertical-name {
+            position: fixed;
+            top: 50%;
+            left: 10px;
+            transform-origin: top left;
+            writing-mode: vertical-lr;
+            text-orientation: sideways;
+            font-size: 24px;
+            font-family: 'Messina Sans', sans-serif;
+            font-feature-settings: "liga";
+            color: #000;
+            z-index: 1;
+        }
+
+        main {
+            margin-left: 70px; /* Adjust the margin to provide space for the line and name */
+        }
 
 h1 {
   font-size: 28px;
@@ -178,6 +217,7 @@ a {
   border-bottom: 1px solid #ddd;
 }
 
+
 .navbar {
   padding: 10px;
   list-style-type: none;
@@ -193,7 +233,7 @@ a {
 .navbar a {
   color: #000;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
   transition: color 0.3s;
 }
@@ -338,9 +378,30 @@ a {
   }
 }
 
+.namenav {
+      display: none;
+ }
+
+
+
 @media (min-width: 769px) {
   body {
     margin-left: 10%;
     margin-right: 10%;
   }
+}
+
+@media (max-width: 769px) {
+  .vertical-line,
+            .vertical-name {
+                display: none;
+            }
+
+            main {
+                margin-left: 0;
+            }
+
+            .namenav {
+                display: block;
+            }
 }
