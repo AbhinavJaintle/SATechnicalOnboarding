@@ -217,6 +217,9 @@ a {
   border-bottom: 1px solid #ddd;
 }
 
+.highlight {
+  background-color: yellow;
+}
 
 .navbar {
   padding: 10px;
